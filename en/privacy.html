@@ -17,7 +17,7 @@
 
 <h2>What stays on your device</h2>
 <p>Everything you enter (trips, activities, places, expenses, notes, imported documents and photos) is stored in the app's private storage. Nothing is sent to a server run by the developer: there is none.</p>
-<p>If Android backup is turned on, Android may copy the app's data to your own Google Drive, encrypted, as it does for every app. Imported documents and photos are excluded and never leave the device that way. You can turn this backup off in Android settings.</p>
+<p>If Android backup is turned on, Android may copy the app's data to your own Google Drive, encrypted, as it does for every app. Imported documents and photos are excluded from this cloud backup. You can turn this backup off in Android settings.</p>
 <p>Export ("Export my trips") creates an archive that <strong>you</strong> choose where to save or share.</p>
 
 <h2>What is sent to third-party services</h2>
@@ -25,12 +25,13 @@
 <table>
 <thead><tr><th>Service</th><th>Why</th><th>What is sent</th></tr></thead>
 <tbody>
-<tr><td>MapTiler</td><td>Map tiles and place search</td><td>The map area shown; the text you type in place search</td></tr>
+<tr><td>MapTiler</td><td>Map tiles and place search</td><td>The map area shown; the text you type in place search, with the destination's position and country to rank results</td></tr>
 <tr><td>Open-Meteo</td><td>Weather and time zone at the destination</td><td>Destination coordinates and dates</td></tr>
 <tr><td>Overpass (OpenStreetMap)</td><td>Opening hours and nearby places</td><td>A place's coordinates</td></tr>
 <tr><td>Valhalla (FOSSGIS, OpenStreetMap)</td><td>Travel time between two activities</td><td>Both activities' coordinates</td></tr>
 <tr><td>Frankfurter</td><td>Exchange rates (ECB)</td><td>Currencies and date</td></tr>
 <tr><td>Nager.Date</td><td>Public holidays in the visited country</td><td>Country and year</td></tr>
+<tr><td>Google (Google Maps links)</td><td>Opening a maps.app.goo.gl short link you share to the app</td><td>The shared link, only in that case</td></tr>
 <tr><td>Google Play</td><td>Purchases (Tripilot Pro, trip pass)</td><td>See below</td></tr>
 </tbody>
 </table>

@@ -17,7 +17,7 @@
 
 <h2>Ce qui reste sur ton appareil</h2>
 <p>Tout ce que tu saisis (voyages, activités, lieux, dépenses, notes, documents et photos importés) est enregistré dans le stockage privé de l'application. Rien n'est envoyé à un serveur du développeur : il n'en existe pas.</p>
-<p>Si la sauvegarde Android est activée sur ton téléphone, Android peut copier les données de l'application dans ton propre espace Google Drive, chiffré, comme pour toutes les applications. Les documents et photos importés en sont exclus et ne quittent jamais l'appareil par ce biais. Tu peux désactiver cette sauvegarde dans les réglages d'Android.</p>
+<p>Si la sauvegarde Android est activée sur ton téléphone, Android peut copier les données de l'application dans ton propre espace Google Drive, chiffré, comme pour toutes les applications. Les documents et photos importés sont exclus de cette sauvegarde dans le cloud. Tu peux désactiver cette sauvegarde dans les réglages d'Android.</p>
 <p>L'export (« Exporter mes voyages ») crée une archive que <strong>toi</strong> choisis où enregistrer ou partager.</p>
 
 <h2>Ce qui est envoyé à des services tiers</h2>
@@ -25,12 +25,13 @@
 <table>
 <thead><tr><th>Service</th><th>Pourquoi</th><th>Ce qui est envoyé</th></tr></thead>
 <tbody>
-<tr><td>MapTiler</td><td>Fonds de carte et recherche de lieux</td><td>Zone de carte affichée ; texte que tu tapes dans la recherche de lieu</td></tr>
+<tr><td>MapTiler</td><td>Fonds de carte et recherche de lieux</td><td>Zone de carte affichée ; texte que tu tapes dans la recherche de lieu, avec la position et le pays de la destination pour classer les résultats</td></tr>
 <tr><td>Open-Meteo</td><td>Météo et fuseau horaire de la destination</td><td>Coordonnées de la destination et dates</td></tr>
 <tr><td>Overpass (OpenStreetMap)</td><td>Horaires d'ouverture et lieux à proximité</td><td>Coordonnées d'un lieu</td></tr>
 <tr><td>Valhalla (FOSSGIS, OpenStreetMap)</td><td>Temps de trajet entre deux activités</td><td>Coordonnées des deux activités</td></tr>
 <tr><td>Frankfurter</td><td>Taux de change (BCE)</td><td>Devises et date</td></tr>
 <tr><td>Nager.Date</td><td>Jours fériés du pays visité</td><td>Pays et année</td></tr>
+<tr><td>Google (liens Google Maps)</td><td>Ouvrir un lien court maps.app.goo.gl que tu partages vers l'app</td><td>Le lien partagé, uniquement dans ce cas</td></tr>
 <tr><td>Google Play</td><td>Achats (Tripilot Pro, pass voyage)</td><td>Voir ci-dessous</td></tr>
 </tbody>
 </table>
