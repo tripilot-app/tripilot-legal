@@ -9,19 +9,20 @@
 <body>
 <main>
 <h1>Privacy Policy</h1>
-<p class="updated">Tripilot · last updated: October 13, 2026</p>
+<p class="updated">Tripilot · last updated: October 19, 2026</p>
 <p class="lang"><a href="../fr/privacy.html">Version française</a></p>
 
 <h2>In short</h2>
 <p>Tripilot is a travel planner that works <strong>on your phone</strong>. There is no account, no advertising, no tracker and no analytics. Your trips, expenses, documents and photos stay on your device. The developer has no access to any of them.</p>
+<p>One exception, which you choose: if you use the <strong>travel assistant</strong> (Pro), what you write to it and part of your trip are sent to Anthropic's Claude AI, through a relay. See below for the details.</p>
 
 <h2>What stays on your device</h2>
-<p>Everything you enter (trips, activities, places, expenses, notes, imported documents and photos) is stored in the app's private storage. Nothing is sent to a server run by the developer: there is none.</p>
+<p>Everything you enter (trips, activities, places, expenses, notes, imported documents and photos) is stored in the app's private storage. Nothing is sent to a server run by the developer, except what you send to the travel assistant (see below).</p>
 <p>If Android backup is turned on, Android may copy the app's data to your own Google Drive, encrypted, as it does for every app. Imported documents and photos are excluded from this cloud backup. You can turn this backup off in Android settings.</p>
 <p>Export ("Export my trips") creates an archive that <strong>you</strong> choose where to save or share.</p>
 
 <h2>What is sent to third-party services</h2>
-<p>For some features the app queries online services directly. They receive the request and, like any web server, your IP address. No personal identifier, name or email address is sent.</p>
+<p>For some features the app queries online services directly. They receive the request and, like any web server, your IP address. No personal identifier, name or email address is sent. The travel assistant has its own section.</p>
 <table>
 <thead><tr><th>Service</th><th>Why</th><th>What is sent</th></tr></thead>
 <tbody>
@@ -33,11 +34,33 @@
 <tr><td>Nager.Date</td><td>Public holidays in the visited country</td><td>Country and year</td></tr>
 <tr><td>Google (Google Maps links)</td><td>Opening a maps.app.goo.gl short link you share to the app</td><td>The shared link, only in that case</td></tr>
 <tr><td>Google Play</td><td>Purchases (Tripilot Pro, trip pass)</td><td>See below</td></tr>
+<tr><td>Tripilot relay (Cloudflare) and Anthropic</td><td>Travel assistant</td><td>See "Travel assistant"</td></tr>
 </tbody>
 </table>
 
 <h2>Purchases</h2>
 <p>Payments are handled entirely by Google Play. The developer never sees your card, name or email address. The app only receives from Google Play the list of active purchases, to unlock Pro. For a trip pass, an internal trip number is attached to the purchase so it can be activated on the right trip; that number carries no information about the trip itself. Payment data is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+<p>The purchase receipt (a token provided by Google Play) is kept on your phone. It is sent to the assistant's relay when you use it, to check the purchase; it also travels in the export archive, so that a trip pass keeps working on another phone.</p>
+
+<h2>Travel assistant</h2>
+<p>The assistant is a Tripilot Pro (and trip pass) feature that uses artificial intelligence: <strong>Claude</strong>, by Anthropic. It is optional: if you do not use it, none of the following happens. Before your first message, the app shows you what is sent.</p>
+<p><strong>What is sent</strong>, with each message:</p>
+<ul>
+<li>your message and this trip's conversation;</li>
+<li>the trip information the assistant needs to answer: destination, country, dates, number of travelers, time zone; a day's activities (title, time, category, address, estimated cost); saved places (name, address); the budget's totals;</li>
+<li>the Google Play purchase receipt, to check that you have Pro or a pass and to count your messages.</li>
+</ul>
+<p><strong>Never sent</strong>: your documents, photos, notes, booking references, or expense details.</p>
+<p><strong>Where it goes</strong>: your phone sends the request to a relay run by the developer on <strong>Cloudflare</strong> (Cloudflare, Inc., United States). The relay checks the purchase with Google Play, counts the message and passes the conversation to <strong>Anthropic</strong> (Anthropic, PBC, United States), which produces the answer. Changes the assistant proposes are saved to your itinerary only if you tap "Apply".</p>
+<p><strong>What is kept</strong>:</p>
+<ul>
+<li>The conversation stays <strong>on your phone</strong>, until "Clear the conversation", the trip's deletion or "Erase all data".</li>
+<li>The relay keeps no conversation. It only keeps a message counter, filed under a fingerprint (SHA-256) of your receipt rather than the receipt itself. Pro's monthly counters are deleted automatically about two months later; a trip pass's counter is kept, since the pass does not expire.</li>
+<li>Cloudflare keeps technical logs of the relay (error codes, request information, never message content) for a few days.</li>
+<li>Anthropic keeps the exchanges for a limited time, under its own terms, and does not use them to train its models.</li>
+</ul>
+<p><strong>Legal basis</strong>: performing the service you asked for and bought (the assistant), after the notice shown in the app.</p>
+<p><strong>Transfers outside the European Union</strong>: Cloudflare and Anthropic are based in the United States, where this data is processed. These transfers are covered by the European Commission's Standard Contractual Clauses in their data processing agreements and, for companies certified under it, by the EU–US Data Privacy Framework. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's policy</a> and <a href="https://www.anthropic.com/legal/privacy">Anthropic's</a>.</p>
 
 <h2>Notifications</h2>
 <p>Reminders are scheduled on your phone. No push notification service is used.</p>
@@ -46,7 +69,7 @@
 <p>Tripilot is not directed at children and does not knowingly collect any data about them.</p>
 
 <h2>Your rights</h2>
-<p>Since the developer holds no personal data about you, there is nothing to access, correct or delete on their side. To erase everything, use "Erase all data" in Settings, or uninstall the app. For purchases, contact Google Play.</p>
+<p>The developer holds neither your trips nor your conversations with the assistant: they are on your phone. To erase everything, use "Erase all data" in Settings, or uninstall the app; for conversations only, "Clear the conversation" in the assistant. The only thing kept on the relay's side is the message counter described above. For a question or a GDPR request (access, erasure, objection), write to the address below. You can also complain to your data protection authority (in France, the <a href="https://www.cnil.fr/en">CNIL</a>). For purchases, contact Google Play.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be published on this page with a new date.</p>

@@ -9,19 +9,20 @@
 <body>
 <main>
 <h1>Politique de confidentialité</h1>
-<p class="updated">Tripilot · dernière mise à jour : 13 octobre 2026</p>
+<p class="updated">Tripilot · dernière mise à jour : 19 octobre 2026</p>
 <p class="lang"><a href="../en/privacy.html">English version</a></p>
 
 <h2>En bref</h2>
 <p>Tripilot est un carnet de voyage qui fonctionne <strong>sur ton téléphone</strong>. Il n'y a pas de compte, pas de publicité, pas de traceur ni d'outil de statistiques. Tes voyages, dépenses, documents et photos restent sur ton appareil. Le développeur n'a accès à aucune de ces données.</p>
+<p>Une seule exception, que tu choisis : si tu utilises l'<strong>assistant de voyage</strong> (Pro), ce que tu lui écris et une partie de ton voyage sont envoyés à l'IA Claude d'Anthropic, par un relais. C'est détaillé plus bas.</p>
 
 <h2>Ce qui reste sur ton appareil</h2>
-<p>Tout ce que tu saisis (voyages, activités, lieux, dépenses, notes, documents et photos importés) est enregistré dans le stockage privé de l'application. Rien n'est envoyé à un serveur du développeur : il n'en existe pas.</p>
+<p>Tout ce que tu saisis (voyages, activités, lieux, dépenses, notes, documents et photos importés) est enregistré dans le stockage privé de l'application. Rien n'est envoyé à un serveur du développeur, sauf ce que tu envoies à l'assistant de voyage (voir plus bas).</p>
 <p>Si la sauvegarde Android est activée sur ton téléphone, Android peut copier les données de l'application dans ton propre espace Google Drive, chiffré, comme pour toutes les applications. Les documents et photos importés sont exclus de cette sauvegarde dans le cloud. Tu peux désactiver cette sauvegarde dans les réglages d'Android.</p>
 <p>L'export (« Exporter mes voyages ») crée une archive que <strong>toi</strong> choisis où enregistrer ou partager.</p>
 
 <h2>Ce qui est envoyé à des services tiers</h2>
-<p>Pour certaines fonctions, l'application interroge directement des services en ligne. Ils reçoivent la requête et, comme tout serveur web, ton adresse IP. Aucun identifiant personnel, nom ou adresse e-mail n'est envoyé.</p>
+<p>Pour certaines fonctions, l'application interroge directement des services en ligne. Ils reçoivent la requête et, comme tout serveur web, ton adresse IP. Aucun identifiant personnel, nom ou adresse e-mail n'est envoyé. L'assistant de voyage fait l'objet d'une section à part.</p>
 <table>
 <thead><tr><th>Service</th><th>Pourquoi</th><th>Ce qui est envoyé</th></tr></thead>
 <tbody>
@@ -33,11 +34,33 @@
 <tr><td>Nager.Date</td><td>Jours fériés du pays visité</td><td>Pays et année</td></tr>
 <tr><td>Google (liens Google Maps)</td><td>Ouvrir un lien court maps.app.goo.gl que tu partages vers l'app</td><td>Le lien partagé, uniquement dans ce cas</td></tr>
 <tr><td>Google Play</td><td>Achats (Tripilot Pro, pass voyage)</td><td>Voir ci-dessous</td></tr>
+<tr><td>Relais Tripilot (Cloudflare) et Anthropic</td><td>Assistant de voyage</td><td>Voir « Assistant de voyage »</td></tr>
 </tbody>
 </table>
 
 <h2>Achats</h2>
 <p>Les paiements sont traités entièrement par Google Play. Le développeur ne voit ni ta carte, ni ton nom, ni ton adresse e-mail. L'application reçoit seulement de Google Play la liste des achats actifs, pour débloquer Pro. Pour un pass voyage, un numéro interne du voyage concerné est joint à l'achat afin de l'activer sur le bon voyage ; ce numéro ne contient aucune information sur le voyage lui-même. Les données de paiement sont régies par la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a>.</p>
+<p>Le reçu de l'achat (un jeton fourni par Google Play) est conservé sur ton téléphone. Il est envoyé au relais de l'assistant quand tu l'utilises, pour vérifier l'achat ; il voyage aussi dans l'archive d'export, pour qu'un pass reste utilisable sur un autre téléphone.</p>
+
+<h2>Assistant de voyage</h2>
+<p>L'assistant est une fonction de Tripilot Pro (et du pass voyage) qui utilise une intelligence artificielle : <strong>Claude</strong>, d'Anthropic. Il est facultatif : si tu ne t'en sers pas, rien de ce qui suit n'a lieu. Avant ton premier message, l'application t'affiche ce qui est envoyé.</p>
+<p><strong>Ce qui est envoyé</strong>, à chaque message :</p>
+<ul>
+<li>ton message et la conversation de ce voyage ;</li>
+<li>les informations du voyage dont l'assistant a besoin pour répondre : destination, pays, dates, nombre de voyageurs, fuseau horaire ; les activités d'une journée (titre, heure, catégorie, adresse, coût estimé) ; les lieux enregistrés (nom, adresse) ; les totaux du budget ;</li>
+<li>le reçu d'achat Google Play, pour vérifier que tu as Pro ou un pass et compter tes messages.</li>
+</ul>
+<p><strong>Jamais envoyé</strong> : tes documents, tes photos, tes notes, tes références de réservation, le détail de tes dépenses.</p>
+<p><strong>Par qui ça passe</strong> : ton téléphone envoie la demande à un relais exploité par le développeur sur <strong>Cloudflare</strong> (Cloudflare, Inc., États-Unis). Le relais vérifie l'achat auprès de Google Play, compte le message et transmet la conversation à <strong>Anthropic</strong> (Anthropic, PBC, États-Unis), qui produit la réponse. Les modifications que propose l'assistant ne sont enregistrées dans ton itinéraire que si tu touches « Appliquer ».</p>
+<p><strong>Ce qui est conservé</strong> :</p>
+<ul>
+<li>La conversation reste <strong>sur ton téléphone</strong>, jusqu'à « Effacer la conversation », la suppression du voyage ou « Effacer toutes les données ».</li>
+<li>Le relais ne garde aucune conversation. Il garde seulement un compteur de messages, rangé sous une empreinte (SHA-256) de ton reçu et non sous le reçu lui-même. Les compteurs mensuels de Pro sont supprimés automatiquement environ deux mois plus tard ; celui d'un pass voyage est conservé, puisque le pass n'expire pas.</li>
+<li>Cloudflare tient des journaux techniques du relais (codes d'erreur, informations sur les requêtes, jamais le contenu des messages), conservés quelques jours.</li>
+<li>Anthropic conserve les échanges pendant une durée limitée, selon ses propres conditions, et ne les utilise pas pour entraîner ses modèles.</li>
+</ul>
+<p><strong>Base légale</strong> : l'exécution du service que tu as demandé et acheté (l'assistant), après l'information affichée dans l'application.</p>
+<p><strong>Transfert hors de l'Union européenne</strong> : Cloudflare et Anthropic sont établis aux États-Unis, où ces données sont traitées. Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne prévues dans leurs accords de traitement des données et, pour les sociétés qui y sont certifiées, par le cadre de protection des données UE–États-Unis (Data Privacy Framework). Voir la <a href="https://www.cloudflare.com/privacypolicy/">politique de Cloudflare</a> et celle d'<a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.</p>
 
 <h2>Notifications</h2>
 <p>Les rappels sont programmés sur ton téléphone. Aucun service de notification push n'est utilisé.</p>
@@ -46,7 +69,7 @@
 <p>Tripilot ne s'adresse pas spécifiquement aux enfants et ne collecte sciemment aucune donnée les concernant.</p>
 
 <h2>Tes droits</h2>
-<p>Comme le développeur ne détient aucune donnée personnelle te concernant, il n'y a rien à consulter, corriger ou supprimer de son côté. Pour tout effacer, utilise « Effacer toutes les données » dans les Réglages, ou désinstalle l'application. Pour tes achats, adresse-toi à Google Play.</p>
+<p>Le développeur ne détient ni tes voyages ni tes conversations avec l'assistant : ils sont sur ton téléphone. Pour tout effacer, utilise « Effacer toutes les données » dans les Réglages, ou désinstalle l'application ; pour les conversations seules, « Effacer la conversation » dans l'assistant. Le seul élément conservé côté relais est le compteur de messages décrit plus haut. Pour une question ou une demande au titre du RGPD (accès, effacement, opposition), écris à l'adresse ci-dessous. Tu peux aussi saisir la <a href="https://www.cnil.fr/">CNIL</a>. Pour tes achats, adresse-toi à Google Play.</p>
 
 <h2>Modifications</h2>
 <p>Si cette politique change, la nouvelle version sera publiée sur cette page avec une nouvelle date.</p>
